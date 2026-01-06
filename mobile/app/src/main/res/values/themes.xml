@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.TaxisRodoviario" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/dark_gray</item> <!-- Cambiado a oscuro para navbars -->
+        <item name="colorPrimaryVariant">@color/light_primary_variant</item>
+        <item name="colorOnPrimary">@color/white</item>    <!-- Texto blanco sobre color primario oscuro -->
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/color_accent</item>
+        <item name="colorSecondaryVariant">@color/color_accent</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/dark_gray</item>
+        <!-- Customize your theme here. -->
+        <item name="android:colorBackground">@color/light_primary</item>
+        <item name="colorSurface">@color/dark_gray</item> <!-- Cambiado a oscuro para BottomNavigationView -->
+        <item name="colorOnBackground">@color/light_on_primary</item>
+        <item name="colorOnSurface">@color/white</item> <!-- Texto blanco sobre superficie oscura -->
+    </style>
+
+    <!-- Estilos personalizados para el Calendario -->
+    <style name="CalendarDateText" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+    <style name="CalendarWeekText" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+    
+    <!-- Estilo para el texto del menú de hamburguesa -->
+    <style name="DrawerItemText" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Estilo para el BottomSheetDialog oscuro -->
+    <style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.Dark">
+        <item name="colorOnSurface">@color/white</item> <!-- Forzar texto blanco en superficies oscuras -->
+        <!-- Puedes añadir más personalizaciones aquí si es necesario -->
+    </style>
+
+    <!-- Estilo para NavigationView con texto blanco -->
+    <style name="Widget.App.NavigationView" parent="Widget.MaterialComponents.NavigationView">
+        <item name="itemTextColor">@color/white</item>
+        <item name="itemIconTint">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item> <!-- Para los títulos de grupo como "Cuenta" -->
+    </style>
+</resources>

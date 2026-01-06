@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/tv_recorrido_inicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inicio: 10:30 AM"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/tv_recorrido_duracion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Duración: 30 min"
+        android:textAppearance="?attr/textAppearanceListItemSecondary"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/tv_recorrido_km"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Distancia: 5.2 km"
+        android:textAppearance="?attr/textAppearanceListItemSecondary"
+        android:textColor="@android:color/black"/>
+
+</LinearLayout>

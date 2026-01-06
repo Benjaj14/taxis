@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Light Theme Colors -->
+    <color name="light_primary">#FFFFFF</color> <!-- White background -->
+    <color name="light_primary_variant">#F0F0F0</color> <!-- Slightly off-white for status bar, etc. -->
+    <color name="light_on_primary">#000000</color> <!-- Black text on white background -->
+    <color name="color_accent">#03DAC5</color> <!-- Teal accent -->
+    <color name="dark_gray">#212121</color>
+</resources>

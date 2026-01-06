@@ -1,0 +1,30 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+tmp/
+temp/
+
+# Backend (Node)
+backend/node_modules/
+backend/.env
+backend/npm-debug.log
+node_modules/
+.env
+
+# Mobile (Android)
+mobile/*.iml
+mobile/.gradle/
+mobile/local.properties
+mobile/.idea/
+mobile/.navigation/
+mobile/build/
+mobile/app/build/
+mobile/captures/
+mobile/.externalNativeBuild/
+mobile/.cxx/
+*.apk
+output.json
+
+# Visual Studio Code
+.vscode/

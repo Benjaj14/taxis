@@ -1,0 +1,283 @@
+ contexto global
+
+
+
+Desarrollo de una Aplicación de Geolocalización para la Empresa Taxis Rodoviario
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Universidad Católica de la Santísima Concepción
+Carrera: Ingeniería de ejecución en informática 
+Nombre: Benjamín Jeldres
+Profesor guía: Sebastián Vera
+Ciudad: Los Ángeles
+Año: 2025
+2. Resumen
+
+Este proyecto se realiza junto a la empresa Taxis Rodoviario, ubicada en Los Ángeles, dedicada al transporte de pasajeros. 
+La empresa necesita una herramienta tecnológica que le permita ver en tiempo real la ubicación de sus taxis y así mejorar la organización, el control y la seguridad del servicio.
+
+El proyecto propone desarrollar una aplicación de geolocalización que funcione mediante el GPS integrado en los teléfonos móviles de los conductores.
+En una primera etapa, se implementará un prototipo utilizando estos dispositivos para realizar pruebas y validar el funcionamiento del sistema.
+La versión final mantendrá este mismo enfoque, operando exclusivamente con los teléfonos móviles como fuente de ubicación, sin necesidad de instalar GPS dedicados en los vehículos.
+
+El desarrollo incluye el uso de tecnologías móviles y servicios de mapas, junto con una base de datos para almacenar la información de ubicación. 
+El objetivo principal es implementar el sistema dentro de la empresa, mejorando la eficiencia operativa y la trazabilidad de los taxis.
+
+3. Índices
+Contenido
+2. Resumen	2
+3. Índices	2
+4. Introducción	3
+Contexto del Proyecto	3
+Planteamiento del Problema	3
+Justificación de la Solución	4
+Objetivo General	4
+Objetivos Específicos	4
+Alcances y Limitaciones	4
+5. Marco Referencial	5
+5.1. Marco Teórico	5
+5.2. Marco Normativo	5
+5.3. Estado del Arte	5
+6.1. Metodología de Desarrollo (versión corregida y completa)	5
+6.2. Herramientas y Tecnologías Utilizadas	6
+6.3. Planificación (Cronograma / Gantt / Hitos)	6
+6.4. Requerimientos	7
+6.4.1 Requerimientos Funcionales	7
+6.4.2 Requerimientos No Funcionales	7
+7. Análisis y Diseño	7
+8. Desarrollo e Implementación	12
+8.1 Módulos Implementados	12
+8.2 Lenguajes / Frameworks	12
+8.3 Integración y despliegue	12
+8.4 Control de versiones	12
+9. Pruebas y Validación	12
+9.1 Estrategia de Pruebas	12
+9.2 Casos de prueba	13
+9.3 Resultados	13
+9.4 Retroalimentación	13
+10. Resultados y Discusión	13
+11. Conclusiones y Recomendaciones	14
+12. Referencias	14
+13. Anexos	14
+
+4. Introducción
+Contexto del Proyecto
+
+La empresa Taxis Rodoviario, ubicada en Los Ángeles, ofrece servicios de transporte a nivel local.
+En la actualidad, muchas empresas de transporte usan sistemas GPS para monitorear sus vehículos, mejorar la gestión interna y aumentar la seguridad tanto de los conductores como de los pasajeros.
+
+Planteamiento del Problema
+
+Taxis Rodoviario no cuenta con una herramienta que le permita ver la ubicación de sus taxis en tiempo real, lo que dificulta saber qué vehículos están disponibles o qué trayectos están realizando. 
+Esto genera descoordinación y una menor eficiencia en la asignación de viajes.
+
+Justificación de la Solución
+
+Desarrollar un sistema de geolocalización permitirá a la empresa mejorar la comunicación y la gestión de su flota, haciendo posible ver en un mapa dónde está cada vehículo.
+El sistema funcionará mediante una aplicación que utilice el GPS de los teléfonos móviles de los conductores, eliminando la necesidad de implementar dispositivos GPS dedicados. Esta solución es más económica, más flexible y suficiente para los requerimientos actuales de la empresa.
+
+Objetivo General
+
+Desarrollar una aplicación de geolocalización para la empresa Taxis Rodoviario que permita monitorear en tiempo real la ubicación de los vehículos utilizando únicamente el GPS de los teléfonos móviles de los conductores.
+
+Objetivos Específicos
+
+- Analizar los requerimientos de la empresa y definir las necesidades del sistema.
+- Diseñar la estructura y la interfaz del sistema de geolocalización.
+- Crear un prototipo que funcione con los GPS de los teléfonos móviles.
+- Desarrollar una plataforma de monitoreo para visualizar los vehículos.
+- Implementar pruebas dentro de la empresa con los conductores.
+
+Alcances y Limitaciones
+
+Alcances:
+- Implementación funcional de un sistema de geolocalización dentro de Taxis Rodoviario.
+- Visualización en tiempo real de la ubicación de los vehículos.
+- Pruebas con los GPS de los teléfonos de los conductores.
+
+
+Limitaciones:
+- El sistema dependerá de la conectividad del celular del conductor.
+- Requiere conexión a Internet y un servicio de mapas activo.
+
+5. Marco Referencial
+5.1. Marco Teórico
+
+En esta parte se explicarán los principales conceptos y tecnologías que se usarán en el proyecto:
+- Geolocalización y funcionamiento del GPS.
+- Arquitectura cliente-servidor.
+- Aplicaciones móviles y comunicación con servidores.
+- Uso de bases de datos para almacenar información en tiempo real.
+- API de mapas, como Google Maps o alternativas libres.
+
+5.2. Marco Normativo
+
+El proyecto debe cumplir con la Ley N° 19.628 sobre protección de datos personales en Chile, cuidando la privacidad de los conductores y la información de ubicación.
+También se aplicarán buenas prácticas de seguridad informática y confidencialidad de datos.
+
+5.3. Estado del Arte
+
+Aquí se analizarán otras aplicaciones y sistemas GPS, como Uber, Cabify y DiDi, que usan mapas y geolocalización en tiempo real.
+También se revisarán sistemas de monitoreo de flotas usados por empresas de transporte y estudios o proyectos similares para comparar funcionalidades.
+6.1. Metodología de Desarrollo (versión corregida y completa)
+Para este proyecto se utilizó una metodología ágil basada en Scrum, adaptada a un trabajo individual.
+Se organizaron sprints semanales, cada uno con objetivos claros, entregables definidos y una revisión al finalizar cada ciclo.
+A continuación, se detalla la planificación completa de los sprints conforme al avance del proyecto:
+Sprint 1 (Semanas 3–4) — Backend Base + App Base
+Objetivo: Establecer la arquitectura inicial del sistema y asegurar la comunicación entre backend y app.
+Sprint 2 (Semanas 5–6) — GPS + Lógica de Recorridos
+Objetivo: Capturar la posición del vehículo y estructurar recorridos en la base de datos.
+Sprint 3 (Semanas 7–8) — Mapa + Historial
+Objetivo: Visualizar la ubicación en tiempo real y consultar viajes anteriores.
+Sprint 4 (Semanas 9–10) — Multiusuario + Seguridad
+Objetivo: Implementar roles y proteger el acceso a la información.
+Sprint 5 (Semanas 11–12) — Integración Final + Pruebas en Terreno
+Objetivo: Integrar completamente el sistema, probarlo en condiciones reales y preparar la entrega final
+
+
+6.2. Herramientas y Tecnologías Utilizadas
+
+Área	Tecnología
+Backend	 = Node.js (Express), PostgreSQL, pg-pool
+Base de datos	= PostgreSQL , pgAdmin 4
+Móvil	= Android Studio, Google Maps SDK
+Diseño	= Canva, Draw.io
+Control de versiones	Git + GitHub
+Testing	= Postman
+Infraestructura	= Servidor local para pruebas (localhost / IP LAN)
+
+6.3. Planificación (Cronograma / Gantt / Hitos)
+Hitos principales:
+•	Requerimientos completados
+•	Diseño aprobado
+•	Backend operativo
+•	App móvil conectada al backend
+•	Seguimiento GPS en tiempo real
+•	Pruebas finales
+•	Informe y presentación
+
+
+
+6.4. Requerimientos
+6.4.1 Requerimientos Funcionales
+•	RF1: Registrar, editar y eliminar vehículos.
+•	RF2: Registrar posiciones GPS en la base de datos.
+•	RF3: Iniciar y finalizar recorridos.
+•	RF4: Visualizar vehículos en un mapa en tiempo real.
+•	RF5: Consultar historial de recorridos.
+•	RF6: Autenticación de administrador.
+•	RF7: Recepción continua de datos desde los teléfonos de los conductores.
+6.4.2 Requerimientos No Funcionales
+•	RNF1: Disponibilidad mínima del servicio del 95%.
+•	RNF2: Respuesta del backend menor a 300 ms.
+•	RNF3: Seguridad según Ley 19.628 (protección de datos).
+•	RNF4: Aplicación fácil de usar por no expertos.
+•	RNF5: Escalabilidad futura para agregar más vehículos.
+
+7. Análisis y Diseño
+ 
+ 
+ 
+  
+ 
+
+   
+
+
+   
+ 
+8. Desarrollo e Implementación
+8.1 Módulos Implementados
+•	Backend Node.js: rutas, controladores, conexión BD.
+•	Módulo Vehículos (GET, POST).
+•	Módulo Posiciones (captura GPS).
+•	Módulo Recorridos (iniciar/terminar).
+•	App Android base: conexión HTTP exitosa a /vehiculos.
+8.2 Lenguajes / Frameworks
+•	Node.js + Express
+•	Kotlin + Android SDK
+•	PostgreSQL
+•	Retrofit, OkHttp, Coroutines
+•	Google Maps SDK
+8.3 Integración y despliegue
+•	Backend local en puerto 3000
+•	App móvil conectada a backend mediante IP LAN
+•	Gestión de versiones mediante GitHub
+8.4 Control de versiones
+Ramas utilizadas:
+•	main
+•	backend
+•	mobile
+•	testing
+•	gps
+
+9. Pruebas y Validación
+9.1 Estrategia de Pruebas
+•	Unitarias en backend (endpoints)
+•	Integración API + BD
+•	Pruebas móviles en emulador
+•	Prueba LAN en teléfono real
+
+
+
+
+
+9.2 Casos de prueba
+Caso																	Entrada														Resultado esperado
+Crear vehículo																	POST vehiculo														Vehículo creado
+Obtener vehículos																	GET /vehiculos														Lista de vehículos
+Enviar coordenada																	POST /posiciones														Guardado exitoso
+Iniciar recorrido																	POST /recorridos														Estado “activo”
+Ver mapa																	GPS real														Coordenada actual
+
+9.3 Resultados
+•	Backend responde correctamente.
+•	App móvil recibe datos reales de la BD.
+•	GPS envía coordenadas 
+9.4 Retroalimentación
+Empresa encuentra útil:
+•	Ver mapa en tiempo real.
+•	Tener historial de recorridos.
+
+10. Resultados y Discusión
+•	Los objetivos principales se están cumpliendo.
+•	El sistema demuestra ser viable para gestión de flotas.
+•	Limitación: depende de conexión a Internet.
+Comparación con otras apps:
+•	Similar a Uber Fleet / TrackerGPS, pero adaptada a transporte local.
+
+
+
+
+
+11. Conclusiones y Recomendaciones
+Conclusiones
+•	La empresa puede monitorear vehículos en tiempo real.
+•	El prototipo móvil demuestra la viabilidad del sistema.
+•	El sistema funciona completamente con los teléfonos de los conductores.
+Recomendaciones
+•	Implementar roles de usuario.
+•	Migrar backend a servidor en la nube.
+•	Ampliar monitoreo a más vehículos.
+12. Referencias
+Formato APA 7:
+Google Developers. (2024). Android documentation. https://developer.android.com/
+Node.js Foundation. (2024). Node.js official docs. https://nodejs.org/en/docs/
+Pressman, R. S. (2015). Ingeniería de software: Un enfoque práctico. McGraw-Hill.
+Sommerville, I. (2016). Software engineering. Pearson.13. Anexos
+
+13. Anexos
+ 
+ 

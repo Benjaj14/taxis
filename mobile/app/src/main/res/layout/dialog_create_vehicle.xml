@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Patente (ej. ABCD-12)"
+        android:textColorHint="@color/dark_gray"
+        app:boxStrokeColor="@color/dark_gray"
+        app:hintTextColor="@color/dark_gray">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_patente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Marca"
+        android:textColorHint="@color/dark_gray"
+        app:boxStrokeColor="@color/dark_gray"
+        app:hintTextColor="@color/dark_gray">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_marca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Modelo"
+        android:textColorHint="@color/dark_gray"
+        app:boxStrokeColor="@color/dark_gray"
+        app:hintTextColor="@color/dark_gray">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_modelo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>
