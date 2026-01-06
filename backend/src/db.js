@@ -10,11 +10,10 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 const { Pool } = pkg;
 
+const isProduction = process.env.DATABASE_URL ? true : false;
+
 export const pool = new Pool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  port: process.env.DB_PORT,
+  connectionString: process.env.DATABASE_URL || `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
+  ssl: isProduction ? { rejectUnauthorized: false } : false
 });
 export default pool;

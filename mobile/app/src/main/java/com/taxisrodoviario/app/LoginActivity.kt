@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var etEmail: EditText
     private lateinit var etPassword: EditText
     private lateinit var btnLogin: Button
-    private lateinit var progressBar: ProgressBar
+    private lateinit var loadingOverlay: View
 
     private val sessionManager by lazy { (application as MainApplication).sessionManager }
     private val apiService by lazy { (application as MainApplication).retrofitClient.apiService }
@@ -39,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
         etEmail = findViewById(R.id.et_email)
         etPassword = findViewById(R.id.et_password)
         btnLogin = findViewById(R.id.btn_login)
-        progressBar = findViewById(R.id.progress_bar)
+        loadingOverlay = findViewById(R.id.loading_overlay)
 
         btnLogin.setOnClickListener {
             val email = etEmail.text.toString().trim()
@@ -130,7 +130,7 @@ class LoginActivity : AppCompatActivity() {
 
 
     private fun showLoading(isLoading: Boolean) {
-        progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+        loadingOverlay.visibility = if (isLoading) View.VISIBLE else View.GONE
         btnLogin.isEnabled = !isLoading
     }
 

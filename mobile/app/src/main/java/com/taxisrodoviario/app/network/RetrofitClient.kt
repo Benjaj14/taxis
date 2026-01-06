@@ -10,8 +10,8 @@ import java.util.concurrent.TimeUnit
 class RetrofitClient(sessionManager: SessionManager) {
 
     companion object {
-        // Usar 10.0.2.2 para que el emulador Android acceda al localhost de la máquina de desarrollo
-        private const val BASE_URL = "http://10.0.2.2:3000/"
+        // Usar la URL de producción en Render
+        private const val BASE_URL = "https://taxis-backend.onrender.com/"
     }
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
