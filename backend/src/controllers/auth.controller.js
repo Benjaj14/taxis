@@ -127,8 +127,6 @@ export const profile = async (req, res) => {
     }
 };
 
-// ... (importaciones anteriores)
-
 export const setupFirstAdmin = async (req, res) => {
     try {
         const email = "admin@taxis.com";
@@ -155,7 +153,14 @@ export const setupFirstAdmin = async (req, res) => {
 };
 
 export const getTrabajadores = async (req, res) => {
-// ... (resto del código)
+    try {
+        const result = await pool.query('SELECT idtrabajador, nombre, email, idvehiculo FROM usuariostrabajadores ORDER BY nombre ASC');
+        res.json(result.rows);
+    } catch (error) {
+        console.error('Error en getTrabajadores:', error);
+        res.status(500).json({ message: "Error al obtener los trabajadores." });
+    }
+};
 
 export const updateTrabajador = async (req, res) => {
     const { id } = req.params;
@@ -217,6 +222,11 @@ export const deleteTrabajador = async (req, res) => {
 };
 
 export const debugDb = async (req, res) => {
-    // ... (código existente)
+    try {
+        const result = await pool.query('SELECT NOW()');
+        res.json(result.rows[0]);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: error.message });
+    }
 };
-
