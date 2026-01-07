@@ -127,21 +127,35 @@ export const profile = async (req, res) => {
     }
 };
 
-// ... (resto de las importaciones y funciones existentes) ...
+// ... (importaciones anteriores)
 
 export const setupFirstAdmin = async (req, res) => {
-    // ... (código existente)
+    try {
+        const email = "admin@taxis.com";
+        const password = "admin123";
+
+        // 1. Borrar si existe (para limpiar errores previos)
+        await pool.query('DELETE FROM usuarioadmin WHERE email = $1', [email]);
+
+        // 2. Encriptar contraseña
+        const passwordHash = await bcrypt.hash(password, 10);
+
+        // 3. Crear el admin limpio
+        await pool.query(
+            'INSERT INTO usuarioadmin (email, password) VALUES ($1, $2)',
+            [email, passwordHash]
+        );
+
+        res.json({ message: "Admin reseteado correctamente. Usuario: admin@taxis.com / Pass: admin123" });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error al crear admin" });
+    }
 };
 
 export const getTrabajadores = async (req, res) => {
-    try {
-        const result = await pool.query('SELECT idtrabajador, nombre, email, idvehiculo FROM usuariostrabajadores ORDER BY nombre ASC');
-        res.json(result.rows);
-    } catch (error) {
-        console.error('Error en getTrabajadores:', error);
-        res.status(500).json({ message: "Error al obtener los trabajadores." });
-    }
-};
+// ... (resto del código)
 
 export const updateTrabajador = async (req, res) => {
     const { id } = req.params;
